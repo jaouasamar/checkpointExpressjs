@@ -4,7 +4,7 @@ const path = require ('path')
 const PORT=5000
 var today= new Date()
 const myLogger=(req,res,next)=>{
-    if(today.getHours()>9||today.getHours()<17||today.getDay()==0||today.getDay()==6)
+    if(today.getHours()<9||today.getHours()>17||today.getDay()==0||today.getDay()==6)
      res.sendFile((path.join(__dirname,'public','img','closed.gif')))
      else
      next()
